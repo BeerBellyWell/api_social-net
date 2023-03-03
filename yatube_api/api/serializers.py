@@ -51,7 +51,7 @@ class FollowSerializer(serializers.ModelSerializer):
         fields = ('user', 'following')
         model = Follow
         read_only_fields = ('user', )
-    
+
     def validate(self, data):
         if data['user'] == data['following']:
             raise serializers.ValidationError(
