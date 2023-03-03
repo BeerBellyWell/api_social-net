@@ -17,7 +17,7 @@ class PostViewSet(viewsets.ModelViewSet):
         permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
     )
     filter_backends = (filters.SearchFilter, filters.OrderingFilter, )
-    search_fields = ('text', )
+    search_fields = ('author', )
     ordering_fields = ('author', 'pub_date', )
 
     def perform_create(self, serializer):
@@ -33,7 +33,6 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = (
         permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
@@ -52,7 +51,6 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 
 class FollowViewSet(viewsets.ModelViewSet):
-    queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     pagination_class = None
     filter_backends = (filters.SearchFilter, )
