@@ -45,12 +45,12 @@ class FollowSerializer(serializers.ModelSerializer):
         model = Follow
         read_only_fields = ('user', )
 
-    validators = (
-        UniqueTogetherValidator(
-            queryset=Follow.objects.all(),
-            fields=('user', 'following')
-        ),
-    )
+        validators = (
+            UniqueTogetherValidator(
+                queryset=Follow.objects.all(),
+                fields=('user', 'following')
+            ),
+        )
 
     def validate(self, data):
         if data['user'] == data['following']:
