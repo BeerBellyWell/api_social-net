@@ -1,4 +1,4 @@
-from posts.models import Post, Comment, Group, Follow, User
+from posts.models import Post, Group, User
 from api.serializers import (
     PostSerializer, CommentSerializer, GroupSerializer, FollowSerializer
 )
