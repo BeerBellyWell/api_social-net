@@ -1,18 +1,31 @@
-# api_final
-api final
+# Api-social-net
 
-Это  для ятуб.
+>API для проекта social-net.
 
-Установка:
-    1. Установить виртуальное окружение: python -m venv venv
-    2. Активировать: source venv/Script/activate
-    3. Установить зависимости: pip install -r requiremets.txt
-    4. Выполнить миграции: python manage.py migrate
-    5. Запустить проект: python manage.py runserver
+Стек: Python v3.9, Django, DRF.
 
-Примеры Api:
-    http://127.0.0.1:8000/api/v1/posts/
-    http://127.0.0.1:8000/api/v1/follow/
-    http://127.0.0.1:8000/api/v1/posts/1/comments/
-    http://127.0.0.1:8000/api/v1/posts/1/comments/1/
-    http://127.0.0.1:8000/api/v1/groups/
+#### Как запустить проект:
+
++ клонируем репозиторий `git clone`
+`https://github.com/BeerBellyWell/api_social-net.git`
++ переходим в него `cd api_social-net`
+    + разворачиваем виртуальное окружение
+    `python3 -m venv env` (Windows: `python -m venv env`)
+    + активируем его
+    `source env/bin/activate` (Windows: `source env/scripts/activate`)
+    + устанавливаем зависимости из файла requirements.txt
+    `pip install -r requirements.txt`
++ выполняем миграции
+`python3 manage.py migrate` (Windows: `python manage.py migrate`)
++ запускаем проект
+`python3 manage.py runserver` (Windows: `python manage.py runserver).
+
+# Инструкции и примеры
+
+>Основные эндпойнты `/api/v1/`:
++ /posts/ 
++ /follow/ 
++ /posts/1/comments/ 
++ /posts/1/comments/1/ 
++ /groups/
+
